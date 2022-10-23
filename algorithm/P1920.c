@@ -20,12 +20,10 @@ int *buildArray(int *nums, int numsSize, int *returnSize) {
 }
 
 int main() {
-    int nums[] = {5, 0, 1, 2, 3, 4};
-    int returnSize[] = {};
-    int *ans = buildArray(nums, 6, returnSize);
-    // for (int i = 0; i < 6; i++) {
-    //     printf("%d", ans[i]);
-    // }
-    printf("%s", vector2string(ans));
+    arrayEntry *e = arrayParse1D("[5,0,1,2,3,4]", ARRAY_INT);
+    int returnSize;
+    int *a = buildArray(arrayValue(e), arraySize(e), &returnSize);
+    char* s = arrayToString1D(a, returnSize, ARRAY_INT);
+    printf("%s", s);
     return 0;
 }

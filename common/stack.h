@@ -9,6 +9,8 @@
 #define COMMON_STACK_H_
 
 #include <string.h>
+#include <assert.h> /* assert() */
+#include <stdlib.h>
 
 #ifndef STACK_INIT_SIZE
 #define STACK_INIT_SIZE 64
@@ -30,5 +32,32 @@ typedef struct {
 context stackMake(void);
 void *stackPush(context *c, size_t size);
 void *stackPop(context *c, size_t size);
+
+context stackMake(void) {
+    context c;
+    c.stack = NULL;
+    c.size = c.top = 0;
+    return c;
+}
+
+void *stackPush(context *c, size_t size) {
+    assert(size > 0);
+    if (c->top + size >= c->size) {
+        if (c->size == 0) c->size = STACK_INIT_SIZE;
+        while (c->top + size >= c->size) {
+            c->size += c->size >> 1; /* c->size * 1.5 */
+        }
+        c->stack = (char *)realloc(c->stack, c->size);
+    }
+
+    c->top += size;
+    return c->stack + c->top - size;
+}
+
+void *stackPop(context *c, size_t size) {
+    assert(size > 0);
+    c->top -= size;
+    return c->stack + c->top;
+}
 
 #endif /* COMMON_STACK_H_ */
