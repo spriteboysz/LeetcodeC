@@ -5,7 +5,7 @@
  * Description: 
  */
 
-#include <leetcode.h>
+#include "..\common\leetcode.h"
 
 int *buildArray(int *nums, int numsSize, int *returnSize) {
     int i;

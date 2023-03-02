@@ -5,8 +5,7 @@
  * Description: 
  */
 
-#include <stdio.h>
-#include <stdbool.h>
+#include "..\common\leetcode.h"
 
 bool isStrictlyPalindromic(int n){
     return 0;
