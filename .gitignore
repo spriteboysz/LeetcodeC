@@ -1,2 +1,5 @@
 /cmake-build-debug/
 /.idea
+/bin
+
+!/P2235.exe

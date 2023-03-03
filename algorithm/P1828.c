@@ -27,15 +27,15 @@ int *countPoints(int **points, int pointsSize, int *pointsColSize, int **queries
 }
 
 int main() {
-    int **points = {{1, 1},
-                    {2, 2},
-                    {3, 3},
-                    {4, 4},
-                    {5, 5}};
-    int **queries = {{1, 2, 2},
-                     {2, 2, 2},
-                     {4, 3, 2},
-                     {4, 3, 3}};
+    int points[5][2] = {{1, 1},
+                      {2, 2},
+                      {3, 3},
+                      {4, 4},
+                      {5, 5}};
+    int queries[4][3] = {{1, 2, 2},
+                       {2, 2, 2},
+                       {4, 3, 2},
+                       {4, 3, 3}};
     int returnSize[] = {};
     countPoints(points, 5, 2, queries, 4, 3, returnSize)
 }
