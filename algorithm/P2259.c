@@ -13,6 +13,7 @@ char *removeDigit(char *number, char digit) {
     char *res = (char *) malloc(sizeof(char) * n);
     maximum[0] = '\0';
     res[0] = '\0';
+
     for (int i = 0; i < n; ++i) {
         if (number[i] == digit) {
             if (i != 0) memcpy(res, number, i);
