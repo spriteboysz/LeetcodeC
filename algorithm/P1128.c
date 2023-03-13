@@ -10,7 +10,7 @@
 int numEquivDominoPairs(int **dominoes, int dominoesSize, int *dominoesColSize) {
     int hash[100] = {0}, cnt = 0;
     for (int i = 0; i < dominoesSize; ++i) {
-        int a = dominoes[i][0], b = dominoes[i][1];
+        int a = dominoes[i][0], b = dominoes[i][dominoesColSize[i] - 1];
         int index = fmin(a, b) * 10 + fmax(a, b);
         cnt += hash[index];
         hash[index]++;
