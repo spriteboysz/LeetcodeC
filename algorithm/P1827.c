@@ -22,6 +22,5 @@ int main() {
     int nums[] = {1, 5, 2, 4, 1};
     int ans = minOperations(nums, 5);
     printf("%d\n", ans);
-    puts(ans);
     return 0;
 }

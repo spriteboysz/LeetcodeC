@@ -19,6 +19,5 @@ int main() {
     int nums[] = {1, 3};
     int ans = subsetXORSum(nums, 2);
     printf("%d\n", ans);
-    puts(ans);
     return 0;
 }

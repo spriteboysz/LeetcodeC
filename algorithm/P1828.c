@@ -37,5 +37,5 @@ int main() {
                        {4, 3, 2},
                        {4, 3, 3}};
     int returnSize[] = {};
-    countPoints(points, 5, 2, queries, 4, 3, returnSize)
+    // countPoints(points, 5, 2, queries, 4, 3, returnSize)
 }
